@@ -27,4 +27,9 @@ Code samples:
 * https://developer.android.com/topic/security/data
 * https://developer.android.com/topic/security/data-android-versions
 * Official sample: https://github.com/android/security-samples/tree/main/FileLocker
+  * [EditFragment.kt](https://github.com/android/security-samples/blob/main/FileLocker/app/src/main/java/com/android/example/filelocker/EditFragment.kt)
+  * [ListFragment.kt](https://github.com/android/security-samples/blob/main/FileLocker/app/src/main/java/com/android/example/filelocker/ListFragment.kt)
 * API reference: https://developer.android.com/reference/kotlin/androidx/security/crypto/package-summary
+  * Kotlin extension: [EncryptedFile.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedFile.kt)
+  * Kotlin extension: [EncryptedSharedPreferences.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedSharedPreferences.kt)
+  * Kotlin extension: [MasterKey.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/MasterKey.kt)
