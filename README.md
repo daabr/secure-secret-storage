@@ -33,3 +33,8 @@ Other code samples:
   * Kotlin extension: [EncryptedFile.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedFile.kt)
   * Kotlin extension: [EncryptedSharedPreferences.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedSharedPreferences.kt)
   * Kotlin extension: [MasterKey.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/MasterKey.kt)
+
+Analysis and sample app by F-Secure (FYI/self-reminder but beyond my current needs):
+
+* https://labs.f-secure.com/blog/how-secure-is-your-android-keystore-authentication
+* https://github.com/FSecureLABS/android-keystore-audit
