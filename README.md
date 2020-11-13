@@ -24,17 +24,20 @@ Also note that version 1.1.0 of the Jetpack Security library also adds Kotlin-sp
 
 Other code samples:
 
-* https://developer.android.com/topic/security/data
-* https://developer.android.com/topic/security/data-android-versions
-* Official sample: https://github.com/android/security-samples/tree/main/FileLocker
-  * [EditFragment.kt](https://github.com/android/security-samples/blob/main/FileLocker/app/src/main/java/com/android/example/filelocker/EditFragment.kt)
-  * [ListFragment.kt](https://github.com/android/security-samples/blob/main/FileLocker/app/src/main/java/com/android/example/filelocker/ListFragment.kt)
-* API reference: https://developer.android.com/reference/kotlin/androidx/security/crypto/package-summary
-  * Kotlin extension: [EncryptedFile.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedFile.kt)
-  * Kotlin extension: [EncryptedSharedPreferences.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedSharedPreferences.kt)
-  * Kotlin extension: [MasterKey.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/MasterKey.kt)
+*   https://developer.android.com/topic/security/data
+*   https://developer.android.com/topic/security/data-android-versions
+*   Official sample: https://github.com/android/security-samples/tree/main/FileLocker
+    *   [EditFragment.kt](https://github.com/android/security-samples/blob/main/FileLocker/app/src/main/java/com/android/example/filelocker/EditFragment.kt)
+    *   [ListFragment.kt](https://github.com/android/security-samples/blob/main/FileLocker/app/src/main/java/com/android/example/filelocker/ListFragment.kt)
+*   API reference: https://developer.android.com/reference/kotlin/androidx/security/crypto/package-summary
+    *   Kotlin extension:
+        [EncryptedFile.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedFile.kt)
+    *   Kotlin extension:
+        [EncryptedSharedPreferences.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/EncryptedSharedPreferences.kt)
+    *   Kotlin extension:
+        [MasterKey.kt](https://android.googlesource.com/platform/frameworks/support/+/c06a5c10503c46142153d9b0cf11349299f28892/security/security-crypto-ktx/src/main/java/androidx/security/crypto/MasterKey.kt)
 
-Analysis and sample app by F-Secure (FYI/self-reminder but beyond my current needs):
+2019 analysis by F-Secure + recommendations and a sample app (FYI but beyond my current needs):
 
 * https://labs.f-secure.com/blog/how-secure-is-your-android-keystore-authentication
 * https://github.com/FSecureLABS/android-keystore-audit
