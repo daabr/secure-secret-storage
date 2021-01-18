@@ -4,6 +4,7 @@
 
     <string name="shared_preference_string">Shared preference string</string>
     <string name="file_content">File content</string>
+    <string name="empty">Empty</string>
 
     <string name="update">Update</string>
 </resources>

@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.security.crypto.EncryptedFile
 import androidx.security.crypto.MasterKey
@@ -26,13 +27,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         val masterKey = getMasterKey()
-
-        val file = getFile()
-        val plainText = readDecryptedFile(file, masterKey)
+        val plainText = readDecryptedFile(getFile(), masterKey)
         findViewById<EditText>(R.id.edit_file).setText(plainText)
+    }
 
-        // Never call (or keep) this function in a real app!
-        logEncryptedFile(file)
+    override fun onStart() {
+        super.onStart()
+        showEncryptedFile(getFile())
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -49,9 +50,7 @@ class MainActivity : AppCompatActivity() {
         val plainText = findViewById<EditText>(R.id.edit_file).text.toString()
         val file = getFile()
         writeEncryptedFile(file, getMasterKey(), plainText)
-
-        // Never call (or keep) this function in a real app!
-        logEncryptedFile(file)
+        showEncryptedFile(file)
     }
 
     /**
@@ -76,20 +75,6 @@ class MainActivity : AppCompatActivity() {
      */
     private fun getFile(): File = File(applicationContext.noBackupFilesDir, ENCRYPTED_FILE_NAME)
 
-    /**
-     * Logs the encrypted contents of the file, for demonstration purposes (i.e. to show that the
-     * encryption really works). Never call or keep this function in a real app!
-     */
-    private fun logEncryptedFile(file: File) {
-        if (file.length().toInt() == 0) {
-            Log.i("MainActivity", "Encrypted file not found or is empty")
-        } else {
-            // TODO: hexadecimal string instead of contentToString().
-            Log.i("MainActivity", "Encrypted file contents: " +
-                    file.inputStream().readBytes().contentToString())
-        }
-    }
-
     private fun readDecryptedFile(file: File, masterKey: MasterKey): String =
         when (file.length().toInt()) {
             0 -> ""
@@ -111,5 +96,23 @@ class MainActivity : AppCompatActivity() {
                 close()
             }
         }
+    }
+
+    @ExperimentalUnsignedTypes
+    private fun ByteArray.toHexString() = asUByteArray().joinToString(" ") {
+        it.toString(16).padStart(2, '0')
+    }
+
+    /**
+     * Displays the encrypted contents of the file, to demonstrate that the encryption really works.
+     */
+    @Suppress("EXPERIMENTAL_API_USAGE")
+    private fun showEncryptedFile(file: File) {
+        var text = "Encrypted file not found or is empty"
+        if (file.length().toInt() > 0) {
+            text = "Encrypted file contents: " + file.inputStream().readBytes().toHexString()
+        }
+        Toast.makeText(applicationContext, text, Toast.LENGTH_LONG).show()
+        Log.i("MainActivity", text)
     }
 }
